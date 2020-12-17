@@ -1,0 +1,7 @@
+body {
+    color: white; 
+    background-image: url("/sphere.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+
+  }
