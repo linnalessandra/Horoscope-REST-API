@@ -55,7 +55,12 @@ async function getDate() {
     const collectedDate = await makeRequest("./viewHoroscope.php", "GET")
     console.log(collectedDate)
 
-    dateText.innerText = collectedDate
+    if (collectedDate){
+        dateText.innerText = collectedDate
+        return
+    }
+dateText.innerText = " ";  
+
 }
 
 
@@ -65,7 +70,6 @@ async function makeRequest(path, method, body) {
             method,
             body
         })
-        console.log(response)
         return response.json()
     } catch(err) {
         console.log.error(err)
